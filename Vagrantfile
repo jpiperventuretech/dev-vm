@@ -19,14 +19,15 @@ VMBOX_URL = "file://D:/Vagrant/kubuntu14.04_x64.box"
 #ENV['DEFAULT_VAGRANT_PROVIDER'] = 'vmware_workstation'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.define :dev_env do |dev_env|
-    dev_env.vm.box = VMBOX
-    dev_env.vm.box_url = VMBOX_URL
-    dev_env.vm.provision :shell, path: "bootstrap_kubuntu.sh"
-	dev_env.vm.provider "virtualbox" do |vb|
+  config.vm.define :dev_environment do |dev_environment|
+    dev_environment.vm.box = VMBOX
+    dev_environment.vm.box_url = VMBOX_URL
+    dev_environment.vm.provision :shell, path: "bootstrap_kubuntu.sh"
+	dev_environment.vm.provider "virtualbox" do |vb|
 	  vb.memory = 4096
 	  vb.gui = true
 	end
-	dev_env.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
+	dev_environment.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
   end
+  config.vm.synced_folder "D:/Workspaces/", "/opt/workspaces/shared"
 end
