@@ -10,13 +10,17 @@ PUBLIC_REPO_USERNAME = "UNKNOWN"
 PUBLIC_REPO_PASSWORD = "UNKNOWN"
 
 #As of yet, there is no public url to specify for the custom kubuntu box
-VMBOX_INTERNAL_URL = "https://repo.i2rd.com/repo/kubuntu14.04_x64.box"
-VMBOX_PUBLIC_URL = "https://" + PUBLIC_REPO_USERNAME + ":" + PUBLIC_REPO_PASSWORD + "@repo.venturetech.net/repo/kubuntu14.04_x64.box"
+VMBOX_INTERNAL_URL = "https://repo.i2rd.com/artifactory/repo/net/venturetech/vagrant/kubuntu14.04_x64.box"
+VMBOX_PUBLIC_URL = "https://" + PUBLIC_REPO_USERNAME + ":" + PUBLIC_REPO_PASSWORD + "@repo.venturetech.net/artifactory/repo/net/venturetech/vagrant/kubuntu14.04_x64.box"
+
+BOX_URLS = Array.new
+BOX_URLS.push VMBOX_INTERNAL_URL
+BOX_URLS.push VMBOX_PUBLIC_URL
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :dev_environment do |dev_environment|
     dev_environment.vm.box = VMBOX
-    dev_environment.vm.box_url = VMBOX_URL
+    dev_environment.vm.box_url = BOX_URLS
     dev_environment.vm.provision :shell, path: "bootstrap_kubuntu.sh"
 	dev_environment.vm.provider "virtualbox" do |vb|
 	  vb.memory = 4096
