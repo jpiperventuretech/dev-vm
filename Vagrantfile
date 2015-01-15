@@ -3,25 +3,11 @@
 
 VAGRANTFILE_API_VERSION = "2"
 
-#Vmware box information
-#VMBOX = "trusty64_vmware"
-#VMBOX_URL = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vmwarefusion.box"
-
-#Virtualbox box information
-#VMBOX = "trusty64_vb"
-#VMBOX_URL = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
-
 #Custom Kubuntu box information
-VMBOX = "kubuntu-test"
+VMBOX = "kubuntu14.04_x64"
 #As of yet, there is no public url to specify for the custom kubuntu box
-<<<<<<< HEAD
-VMBOX_URL = "file://D:/Vagrant/kubuntu14.04_x64.box"
-=======
 VMBOX_INTERNAL_URL = "https://repo.i2rd.com/repo/kubuntu14.04_x64.box"
 VMBOX_NET_URL = "https://UNKNOWN:UNKNOWN@repo.venturetech.net/repo/kubuntu14.04_x64.box"
->>>>>>> 1858caf... Removed public credentials from Vagrantfile
-
-#ENV['DEFAULT_VAGRANT_PROVIDER'] = 'vmware_workstation'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :dev_environment do |dev_environment|
