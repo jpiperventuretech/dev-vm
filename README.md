@@ -1,3 +1,9 @@
+Quick setup instructions are below, however, download links are nonexistent.  If you wish to view the more comprehensive setup document, please follow the below URL:  
+
+https://docs.google.com/a/vipasolutions.com/document/d/1ua770K3Yi5vWUTN-JI3RX2a75uIk88-MGhyF5D8iDLI/edit?usp=sharing  
+
+---------------------------------------------------------------------
+
 Vagrant, unlike our previous setup guide that uses VMWare, is not the same. It is a piece of software that allows a user to quickly create, manage, and destroy virtual machines on the fly with simple command line commands (“vagrant up”).  As a result, it is designed to interface with a virtual machine provisioning application called VirtualBox, which is similar to VMWare.
 
 1) Install VirtualBox (Windows x86/64 Installer, Other OS Installers)  
