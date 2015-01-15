@@ -14,7 +14,12 @@ VAGRANTFILE_API_VERSION = "2"
 #Custom Kubuntu box information
 VMBOX = "kubuntu-test"
 #As of yet, there is no public url to specify for the custom kubuntu box
+<<<<<<< HEAD
 VMBOX_URL = "file://D:/Vagrant/kubuntu14.04_x64.box"
+=======
+VMBOX_INTERNAL_URL = "https://repo.i2rd.com/repo/kubuntu14.04_x64.box"
+VMBOX_NET_URL = "https://UNKNOWN:UNKNOWN@repo.venturetech.net/repo/kubuntu14.04_x64.box"
+>>>>>>> 1858caf... Removed public credentials from Vagrantfile
 
 #ENV['DEFAULT_VAGRANT_PROVIDER'] = 'vmware_workstation'
 
