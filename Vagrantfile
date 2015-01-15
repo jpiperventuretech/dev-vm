@@ -5,9 +5,13 @@ VAGRANTFILE_API_VERSION = "2"
 
 #Custom Kubuntu box information
 VMBOX = "kubuntu14.04_x64"
+
+PUBLIC_REPO_USERNAME = "UNKNOWN"
+PUBLIC_REPO_PASSWORD = "UNKNOWN"
+
 #As of yet, there is no public url to specify for the custom kubuntu box
 VMBOX_INTERNAL_URL = "https://repo.i2rd.com/repo/kubuntu14.04_x64.box"
-VMBOX_NET_URL = "https://UNKNOWN:UNKNOWN@repo.venturetech.net/repo/kubuntu14.04_x64.box"
+VMBOX_PUBLIC_URL = "https://" + PUBLIC_REPO_USERNAME + ":" + PUBLIC_REPO_PASSWORD + "@repo.venturetech.net/repo/kubuntu14.04_x64.box"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define :dev_environment do |dev_environment|
